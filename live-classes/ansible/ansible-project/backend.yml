@@ -18,6 +18,11 @@
     - name: Adding Application User
       ansible.builtin.user:
         name: expense
+
+    # - name: Import Application Common tasks
+    #   ansible.builtin.import_role:
+    #     name: common
+    #     tasks_from: main.yml    
     
     - name: Clean the old Content
       ansible.builtin.file:
@@ -71,7 +76,10 @@
         name: backend
         state: restarted   
         enabled: yes
-        daemon_reload: yes         
+        daemon_reload: yes  
+
+  # roles: 
+  #  - rolenames           
 
 
 
