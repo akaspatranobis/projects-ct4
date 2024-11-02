@@ -5,7 +5,7 @@ variable "x" {
 #int, list , map , bool , string
 
 variable "y_list" {
-   default = [1,2,3]
+   default = ["abc","cad",7]
 }
 
 variable "z_map" {
