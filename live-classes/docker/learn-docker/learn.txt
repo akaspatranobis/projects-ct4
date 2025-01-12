@@ -57,9 +57,21 @@ ENTRYPOINT keyword is used strictly to run commands the
 moment the container initializes along with multiple arguments -- java app.jar --xms 20Gb
 
 FROM ubuntu
-ENTRYPOINT ["echo", "Hello from ENTRYPOINT:"]
+ENTRYPOINT ["echo" , "Hello from ENTRYPOINT:"]
 
-# docker run e:1 "Some additional text"
+ubuntu@ip-172-31-18-222:~$ docker run entry:1 "Some additional content"
+Hello from ENTRYPOINT: Some additional content
+
+===================================================================
+
+FROM ubuntu
+ENTRYPOINT ["echo"]
+CMD ["You can control this via runtime too"]
+
+ubuntu@ip-172-31-18-222:~$ docker run entry:2
+You can control this via runtime too
+ubuntu@ip-172-31-18-222:~$ docker run entry:2 "I love learning Docker"
+I love learning Docker
 
 
 
