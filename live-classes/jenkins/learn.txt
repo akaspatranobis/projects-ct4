@@ -1,6 +1,8 @@
 pipeline {
 
-    agent 'slave1'/any
+    agent { label 'linux-agent' }  // Runs on a specific agent with label 'my-agent'
+
+    agent any  // Runs on any available Jenkins agent
 
     stages {
         stage ('Git Clone') {
@@ -37,6 +39,8 @@ pipeline {
 •	Docker API
 •	Docker-build-step
 .   Terrafrom
+.   Git
+.   Git Server
 .   All Pipeline Plugins
 .   AWSCredentials
 .   Kubernetes All Plugins
